@@ -1,0 +1,22 @@
+[package]
+name = "b2get"
+version = "0.1.0"
+authors = ["Ian Wagner <ian@stadiamaps.com>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+description = "A really simple CLI utility for downloading files from Backblaze B2"
+repository = "https://github.com/stadiamaps/b2get"
+keywords = ["backblaze", "b2"]
+categories = ["api-bindings", "command-line-utilities"]
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.75"
+base16ct = { version = "0.2.0", features = ["alloc"] }
+clap = { version = "4.4.6", features = ["derive", "env"] }
+futures-util = "0.3.28"
+reqwest = { version = "0.11.22", features = ["json", "stream"] }
+serde = { version = "1.0.189", features = ["derive"] }
+sha1 = "0.10.6"
+tokio = { version = "1.33.0", features = ["macros", "fs"] }
+indicatif = "0.17.7"

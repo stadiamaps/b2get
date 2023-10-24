@@ -1,5 +1,7 @@
 # b2get
 
+[![](https://img.shields.io/crates/v/b2get.svg)](https://crates.io/crates/b2get)
+
 `b2get` is a stupidly simple CLI for downloading files from Backblaze B2.
 It doesn't do anything else; you'll find none of the rest of the API is covered.
 It's _just_ a file downloader.

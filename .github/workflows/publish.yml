@@ -23,7 +23,6 @@ jobs:
 
   publish_cli_binary:
     name: Release build with ${{ matrix.os }}
-    if: startsWith(github.event.release.tag_name, 'cli-')
     strategy:
       fail-fast: true
       # TODO: Not sure I agree with this setup of different runners; seems like we should use cross or something

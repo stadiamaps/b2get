@@ -36,15 +36,18 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+
       - name: Use Rust Stable
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+
+      - name: Install cargo-auditable
+        run: cargo install cargo-auditable cargo-audit
+
       - name: Build
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --all-features --release
+        run: cargo auditable build --release
+
       - name: Push Artifacts
         run: |
           mv target/release/b2get target/release/b2get.${{ matrix.target }}
